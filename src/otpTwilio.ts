@@ -1,4 +1,4 @@
-import { Twilio } from 'twilio';
+import twilio from 'twilio';
 
 export type OtpOptions = {
 	accountSid: string;
@@ -23,7 +23,7 @@ export async function waitForOtp(options: OtpOptions): Promise<string> {
 		pollIntervalMs = 1_000,
 	} = options;
 
-	const client = new Twilio(accountSid, authToken);
+	const client = twilio(accountSid, authToken);
 	const deadline = Date.now() + timeoutMs;
 	let lastMessageSid: string | undefined;
 

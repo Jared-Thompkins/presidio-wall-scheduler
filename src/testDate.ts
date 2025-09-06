@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
 import { loadConfig } from './env';
+import { waitForOtpFromMessagesDb } from './otpMacSqlite';
 
 function addDays(date: Date, days: number): Date {
 	const d = new Date(date);
@@ -103,19 +104,25 @@ async function main() {
 	await slotButton.first().click();
 	console.log('Clicked slot label:', label);
 
-	// Open participant dropdown and choose the last option
+	// Ensure participant is selected (idempotent)
 	const listboxBtn = page.locator('button[aria-haspopup="listbox"]');
-	await listboxBtn.first().waitFor({ state: 'visible', timeout: 5000 });
-	await listboxBtn.first().scrollIntoViewIfNeeded();
-	await listboxBtn.first().click();
-	const options = page.locator('[role="option"]');
-	await options.first().waitFor({ state: 'visible', timeout: 5000 });
-	const count = await options.count();
-	if (count > 0) {
-		await options.nth(count - 1).click();
-		console.log('Selected participant: last option');
-	} else {
-		console.log('No participant options found');
+	if (await listboxBtn.count()) {
+		await listboxBtn.first().waitFor({ state: 'visible', timeout: 5000 });
+		const labelText = (await listboxBtn.first().innerText()).trim();
+		const needsSelection = /select\s*participant/i.test(labelText) || labelText.length === 0;
+		if (needsSelection) {
+			await listboxBtn.first().scrollIntoViewIfNeeded();
+			await listboxBtn.first().click();
+			const options = page.locator('[role="option"]');
+			await options.first().waitFor({ state: 'visible', timeout: 5000 });
+			const count = await options.count();
+			if (count > 0) {
+				await options.nth(count - 1).click();
+				console.log('Selected participant: last option');
+			}
+		} else {
+			console.log('Participant already selected');
+		}
 	}
 
 	// Click Book button
@@ -123,6 +130,28 @@ async function main() {
 	await bookBtn.first().waitFor({ state: 'visible', timeout: 5000 });
 	await bookBtn.first().click();
 	console.log('Clicked Book');
+
+	// Send Code
+	const sendBtn = page.getByRole('button', { name: /send\s*code/i });
+	await sendBtn.first().waitFor({ state: 'visible', timeout: 15000 });
+	await sendBtn.first().click();
+	console.log('Clicked Send Code');
+
+	// Wait for OTP input
+	const codeInput = page.locator('#totp, input[autocomplete="one-time-code"], input[name="totp" i]');
+	await codeInput.first().waitFor({ state: 'visible', timeout: 60000 });
+
+	// Retrieve OTP from Mac Messages DB
+	const code = await waitForOtpFromMessagesDb({ timeoutMs: 120_000 });
+	console.log('Received OTP:', code);
+	await codeInput.first().fill(code);
+
+	// Submit verification
+	const verifyBtn = page.getByRole('button', { name: /verify|continue|submit|confirm/i });
+	if (await verifyBtn.count()) {
+		await verifyBtn.first().click({ timeout: 10000 }).catch(() => {});
+		console.log('Submitted OTP');
+	}
 
 	await page.waitForTimeout(1500);
 	await context.close();

@@ -1,6 +1,7 @@
 import { chromium, BrowserContext } from 'playwright';
 import { loadConfig } from './env';
 import { waitForOtp } from './otpTwilio';
+import { waitForOtpFromMessagesDb } from './otpMacSqlite';
 
 function msUntil(targetIsoLocal: string, tz: string): number {
 	const now = new Date();
@@ -97,21 +98,53 @@ async function selectDateSevenDaysFromNow(page: any, timeZone: string) {
 
 async function ensureOtp(page: any, cfg: ReturnType<typeof loadConfig>) {
 	// This function is a placeholder where we wait for OTP prompt, then pull code via Twilio
-	if (!cfg.TWILIO_ACCOUNT_SID || !cfg.TWILIO_AUTH_TOKEN || !cfg.TWILIO_PHONE_NUMBER) return;
 	try {
-		await page.waitForSelector('input[autocomplete="one-time-code"], input[name*="code" i]', { timeout: 3000 });
-		const code = await waitForOtp({
-			accountSid: cfg.TWILIO_ACCOUNT_SID,
-			authToken: cfg.TWILIO_AUTH_TOKEN,
-			twilioPhone: cfg.TWILIO_PHONE_NUMBER,
-			userPhoneLast4: cfg.USER_PHONE_LAST4,
-			matchRegex: /(\d{6})/,
-			timeoutMs: 45_000,
-		});
-		await page.fill('input[autocomplete="one-time-code"], input[name*="code" i]', code);
-		await page.getByRole('button', { name: /verify|submit|continue/i }).click({ timeout: 5000 });
-	} catch {
-		// No OTP prompt or failure; continue best-effort
+		const sendBtn = page.getByRole('button', { name: /send\s*code/i });
+		if (await sendBtn.count()) {
+			await sendBtn.first().click({ timeout: 10000 });
+		}
+		const inputSel = 'input#totp, input[autocomplete="one-time-code"], input[name="totp" i]';
+		await page.waitForSelector(inputSel, { timeout: 60_000 });
+		// Prefer Mac Messages DB, fallback to Twilio if configured
+		let code: string | null = null;
+		try {
+			code = await waitForOtpFromMessagesDb({ timeoutMs: 120_000 });
+		} catch {
+			if (cfg.TWILIO_ACCOUNT_SID && cfg.TWILIO_AUTH_TOKEN && cfg.TWILIO_PHONE_NUMBER) {
+				code = await waitForOtp({
+					accountSid: cfg.TWILIO_ACCOUNT_SID,
+					authToken: cfg.TWILIO_AUTH_TOKEN,
+					twilioPhone: cfg.TWILIO_PHONE_NUMBER,
+					userPhoneLast4: cfg.USER_PHONE_LAST4,
+					matchRegex: /(\d{6})/,
+					timeoutMs: 120_000,
+				});
+			}
+		}
+		if (code) {
+			await page.fill(inputSel, code);
+			const verifyBtn = page.getByRole('button', { name: /verify|continue|submit|confirm/i });
+			if (await verifyBtn.count()) {
+				await verifyBtn.first().click({ timeout: 10000 }).catch(() => {});
+			}
+		}
+	} catch {}
+}
+
+async function ensureParticipantSelected(page: any) {
+	const listboxBtn = page.locator('button[aria-haspopup="listbox"]');
+	if (!(await listboxBtn.count())) return; // No participant control present
+	await listboxBtn.first().waitFor({ state: 'visible', timeout: 5000 });
+	const labelText = (await listboxBtn.first().innerText()).trim();
+	const needsSelection = /select\s*participant/i.test(labelText) || labelText.length === 0;
+	if (!needsSelection) return; // Already selected, idempotent no-op
+	await listboxBtn.first().scrollIntoViewIfNeeded();
+	await listboxBtn.first().click();
+	const options = page.locator('[role="option"]');
+	await options.first().waitFor({ state: 'visible', timeout: 5000 });
+	const count = await options.count();
+	if (count > 0) {
+		await options.nth(count - 1).click();
 	}
 }
 
