@@ -1,0 +1,25 @@
+{
+  "name": "presidio-wall-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "book": "tsx src/book.ts",
+    "save:storage": "tsx src/saveStorage.ts",
+    "inspect": "tsx src/inspect.ts",
+    "test:date": "tsx src/testDate.ts",
+    "start": "npm run book"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/node": "^20.11.30",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.47.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "twilio": "^4.22.0"
+  }
+}

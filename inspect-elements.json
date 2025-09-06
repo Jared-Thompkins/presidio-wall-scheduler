@@ -1,0 +1,572 @@
+[
+  {
+    "tag": "a",
+    "text": "",
+    "href": "https://www.rec.us/organizations/san-francisco-rec-park"
+  },
+  {
+    "tag": "button",
+    "text": "Log In",
+    "cls": "relative mr-3 inline-flex h-10 items-center justify-center rounded-full border px-5 py-2 border-neutral-900 text-neutral-900 hidden md:inline-flex"
+  },
+  {
+    "tag": "button",
+    "text": "Sign Up",
+    "cls": "relative mr-3 inline-flex h-10 items-center justify-center rounded-full border px-5 py-2 border-neutral-900 text-neutral-900 bg-neutral-900"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "id": "radix-:r0:",
+    "cls": "flex h-[40px] w-[40px] items-center justify-center"
+  },
+  {
+    "tag": "a",
+    "text": "San Francisco Rec & Park",
+    "href": "https://www.rec.us/organizations/san-francisco-rec-park",
+    "cls": "shrink-0 underline cursor-pointer hover:no-underline flex items-center space-x-2"
+  },
+  {
+    "tag": "a",
+    "text": "Spruce St & Pacific Ave, ...",
+    "href": "https://www.google.com/maps?q=Spruce%20St%20%26%20Pacific%20Ave%2C%20...&ll=37.7904685,-122.4542353",
+    "cls": "shrink-0 underline cursor-pointer hover:no-underline flex"
+  },
+  {
+    "tag": "a",
+    "text": "here",
+    "href": "https://www.notion.so/rec-team/Now-Serving-Dedicated-Timeslots-128f117be004808690ffd5b12ace58f6",
+    "cls": "shrink-0 underline cursor-pointer hover:no-underline"
+  },
+  {
+    "tag": "a",
+    "text": "TENNIS\nTennis Small Group Lessons - Adults (Intermediate)\nPresidio Wall\nMatthew Sugidono\nStarted Thu, 4 September • 7:00",
+    "href": "https://www.rec.us/reservations/f4b57bec-43b6-4323-ae97-20bf8212eaf8",
+    "cls": "flex flex-col overflow-hidden rounded-sm border border-neutral-200 transition-shadow hover:shadow-md"
+  },
+  {
+    "tag": "a",
+    "text": "Matthew Sugidono",
+    "href": "https://www.rec.us/instructors/e6bf1d76-37ea-4a62-b9b0-1ad577e2065c",
+    "cls": "shrink-0 underline cursor-pointer hover:no-underline"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:flex"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:flex"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute left-0 z-10 hidden h-full w-16 items-center justify-start bg-gradient-to-r from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "button",
+    "text": "",
+    "cls": "absolute right-0 z-10 hidden h-full w-16 items-center justify-end bg-gradient-to-l from-white from-25% transition md:hidden"
+  },
+  {
+    "tag": "a",
+    "text": "Visit Our Help Center",
+    "href": "https://help.rec.us/",
+    "cls": "underline"
+  },
+  {
+    "tag": "a",
+    "text": "Terms",
+    "href": "https://www.rec.us/tos"
+  },
+  {
+    "tag": "a",
+    "text": "Privacy",
+    "href": "https://www.rec.us/privacy"
+  },
+  {
+    "tag": "a",
+    "text": "Community Guidelines",
+    "href": "https://www.rec.us/communityguidelines",
+    "cls": "whitespace-nowrap"
+  },
+  {
+    "tag": "a",
+    "text": "About Us",
+    "href": "https://www.rec.us/aboutus",
+    "cls": "whitespace-nowrap"
+  },
+  {
+    "tag": "a",
+    "text": "Careers",
+    "href": "https://app.dover.com/jobs/rec"
+  },
+  {
+    "tag": "a",
+    "text": "Newsroom",
+    "href": "https://www.rec.us/newsroom"
+  },
+  {
+    "tag": "a",
+    "text": "Get Involved",
+    "href": "https://www.rec.us/getinvolved",
+    "cls": "whitespace-nowrap"
+  },
+  {
+    "tag": "a",
+    "text": "",
+    "href": "https://www.rec.us/locations"
+  },
+  {
+    "tag": "svg",
+    "text": "",
+    "role": "img",
+    "cls": {}
+  },
+  {
+    "tag": "section",
+    "text": ""
+  }
+]
