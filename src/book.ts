@@ -148,6 +148,33 @@ async function ensureParticipantSelected(page: any) {
 	}
 }
 
+async function tryBookOnce(page: any, cfg: ReturnType<typeof loadConfig>): Promise<boolean> {
+	// Re-select target date (+7d) each attempt in case calendar resets on reload
+	await selectDateSevenDaysFromNow(page, cfg.TZ);
+
+	// Look for desired time slot quickly
+	const slotLabel = cfg.TARGET_SLOT_TIME || '6:00 PM';
+	const slotButton = page.locator('button:has-text("' + slotLabel + '")').first();
+	try {
+		await slotButton.waitFor({ state: 'visible', timeout: 700 });
+	} catch {
+		return false; // slot not yet visible; caller will refresh and retry
+	}
+	await slotButton.click();
+
+	// Ensure a participant is selected (idempotent)
+	await ensureParticipantSelected(page);
+
+	// Click Book
+	const bookBtn = page.getByRole('button', { name: /^Book$/i });
+	await bookBtn.first().click({ timeout: 3000 });
+
+	// Handle OTP if prompted
+	await ensureOtp(page, cfg);
+
+	return true;
+}
+
 async function prepareContext(userDataDir: string, timezoneId: string): Promise<BrowserContext> {
 	const context = await chromium.launchPersistentContext(userDataDir, { headless: false, timezoneId });
 	return context;
@@ -167,24 +194,23 @@ async function book() {
 	}, { timeout: 90_000 }).catch(() => {});
 	await page.reload({ waitUntil: 'domcontentloaded' });
 
-	// Date selection: pick date exactly 7 days from now
-	await selectDateSevenDaysFromNow(page, cfg.TZ);
+	// Retry loop: refresh-and-try up to 20 times until slot appears
+	let success = false;
+	for (let attempt = 1; attempt <= 20; attempt++) {
+		const ok = await tryBookOnce(page, cfg);
+		if (ok) {
+			success = true;
+			break;
+		}
+		await page.reload({ waitUntil: 'domcontentloaded' });
+		await page.waitForTimeout(150);
+	}
 
-	// Time slot: click the button with the desired time label (e.g., 6:00 PM)
-	const slotLabel = cfg.TARGET_SLOT_TIME || '6:00 PM';
-	const slotButton = page.locator('button:has-text("' + slotLabel + '")');
-	await slotButton.first().waitFor({ state: 'visible', timeout: 3000 });
-	await slotButton.first().click();
-
-	// TODO: Implement selectors for court selection and final booking submit
-	// Example placeholders:
-	// await page.getByRole('button', { name: cfg.TARGET_DATE }).click();
-	// await page.getByRole('button', { name: cfg.TARGET_COURT || 'Court 1' }).click();
-	// await page.getByText(cfg.TARGET_TIME).click();
-	// await page.getByRole('button', { name: /book|reserve/i }).click();
-
-	await ensureOtp(page, cfg);
-	await page.screenshot({ path: `booking-${Date.now()}.png`, fullPage: true });
+	if (!success) {
+		console.error('Target slot did not appear after 20 attempts; exiting.');
+	} else {
+		await page.screenshot({ path: `booking-${Date.now()}.png`, fullPage: true });
+	}
 	await context.close();
 	await context.browser()?.close();
 }
