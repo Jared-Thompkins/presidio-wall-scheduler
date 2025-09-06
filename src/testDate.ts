@@ -137,12 +137,15 @@ async function main() {
 	await sendBtn.first().click();
 	console.log('Clicked Send Code');
 
+	// Small delay to allow SMS dispatch
+	await page.waitForTimeout(2000);
+
 	// Wait for OTP input
 	const codeInput = page.locator('#totp, input[autocomplete="one-time-code"], input[name="totp" i]');
 	await codeInput.first().waitFor({ state: 'visible', timeout: 60000 });
 
 	// Retrieve OTP from Mac Messages DB
-	const code = await waitForOtpFromMessagesDb({ timeoutMs: 120_000 });
+	const code = await waitForOtpFromMessagesDb({ timeoutMs: 180_000 });
 	console.log('Received OTP:', code);
 	await codeInput.first().fill(code);
 

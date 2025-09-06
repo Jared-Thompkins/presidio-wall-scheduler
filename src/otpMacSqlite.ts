@@ -38,7 +38,7 @@ export async function waitForOtpFromMessagesDb(options: Options = {}): Promise<s
 		const initial = await queryRecentMessages();
 		initial.forEach((r) => seen.add(`${r.when}|${r.text}`));
 	} catch (e) {
-		throw new Error('Failed to read Messages database via sqlite3. Grant Full Disk Access to your terminal/app and ensure sqlite3 is installed.');
+		// Permissions not ready yet; proceed and retry in the loop
 	}
 	while (Date.now() < deadline) {
 		try {
