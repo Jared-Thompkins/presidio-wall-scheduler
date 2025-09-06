@@ -8,6 +8,9 @@
     "save:storage": "tsx src/saveStorage.ts",
     "inspect": "tsx src/inspect.ts",
     "test:date": "tsx src/testDate.ts",
+    "otp:listen": "tsx src/otpListen.ts",
+    "otp:mac": "tsx src/otpMac.ts",
+    "otp:mac:db": "tsx src/otpMacSqlite.ts",
     "start": "npm run book"
   },
   "devDependencies": {
