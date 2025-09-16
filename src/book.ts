@@ -183,27 +183,24 @@ async function prepareContext(userDataDir: string, timezoneId: string): Promise<
 async function book() {
 	const cfg = loadConfig();
 	const context = await prepareContext(cfg.USER_DATA_DIR!, cfg.TZ);
-	const page = await context.newPage();
+	let page = await context.newPage();
 	await page.goto(cfg.REC_URL, { waitUntil: 'domcontentloaded' });
-	await ensureOtp(page, cfg);
 
-	// Wait for 08:00 in the page's timezone (context is set to cfg.TZ). If already past, continues immediately.
-	await page.waitForFunction(() => {
-		const d = new Date();
-		return d.getHours() > 8 || (d.getHours() === 8 && d.getMinutes() >= 0);
-	}, { timeout: 90_000 }).catch(() => {});
-	await page.reload({ waitUntil: 'domcontentloaded' });
-
-	// Retry loop: refresh-and-try up to 20 times until slot appears
+	// Continuous refresh/attempt loop until slot appears (up to many tries)
 	let success = false;
-	for (let attempt = 1; attempt <= 20; attempt++) {
+	for (let attempt = 1; attempt <= 300; attempt++) {
 		const ok = await tryBookOnce(page, cfg);
 		if (ok) {
 			success = true;
 			break;
 		}
-		await page.reload({ waitUntil: 'domcontentloaded' });
-		await page.waitForTimeout(150);
+		try {
+			await page.reload({ waitUntil: 'domcontentloaded' });
+		} catch {
+			page = await context.newPage();
+			await page.goto(cfg.REC_URL, { waitUntil: 'domcontentloaded' });
+		}
+		await page.waitForTimeout(50);
 	}
 
 	if (!success) {
